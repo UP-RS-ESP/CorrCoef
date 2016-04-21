@@ -1,8 +1,8 @@
 # CorrCoef
-Python C-extension for memory efficient and multithreaded Pearson product-moment correlation coefficient estimation using OpenMP
+Python C-extension for memory efficient and multithreaded Pearson product-moment correlation coefficient estimation using OpenMP.
 
 ## Example
-An example using random data for `num = 4` time series of length `len = 100` using as many threads as possible: ::
+An example using random data for `num = 4` time series of length `len = 100` using as many threads as possible:
 
 	import numpy as np
 	import CorrCoef
