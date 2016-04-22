@@ -10,5 +10,5 @@ An example using random data for `num = 4` time series of length `len = 100` usi
 	num = 4
 	len = 100
 	data = np.random.random((num, len))
-	corr = CorrCoef(data)
+	corr = CorrCoef.Pearson(data)
 
