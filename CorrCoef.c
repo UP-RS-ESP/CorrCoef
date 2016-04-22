@@ -17,8 +17,6 @@ pearson(const double *d, const int n, const int l) {
 	double mi, si, sum;
 	double *m, *s;
 
-	double u, v;
-
 	nn = n * (n - 1) / 2;
 	dim = malloc(sizeof(npy_intp));
 	dim[0] = n * (n - 1) / 2;
