@@ -7,18 +7,18 @@
 #define VERSION "0.1"
 
 PyArrayObject *
-pearson(const double *d, const int n, const int l) {
+pearson(const double *d, const unsigned long n, const unsigned long l) {
 	PyArrayObject *coef;
 	double *c;
-	npy_intp *dim;
+	unsigned long *dim;
 
-	int ik, i, k, o, nn;
+	unsigned long ik, i, k, o, nn;
 	double mk, sk, dk, h;
 	double mi, si, sum;
 	double *m, *s;
 
 	nn = n * (n - 1) / 2;
-	dim = malloc(sizeof(npy_intp));
+	dim = malloc(sizeof(unsigned long));
 	dim[0] = n * (n - 1) / 2;
 	coef = (PyArrayObject *) PyArray_ZEROS(1, dim, PyArray_DOUBLE, 0);
 	free(dim);
