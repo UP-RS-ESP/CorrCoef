@@ -4,7 +4,7 @@
 #include <math.h>
 #include <omp.h>
 
-#define VERSION "0.3"
+#define VERSION "1.0"
 
 PyArrayObject *
 pearson(const double *d, const unsigned long n, const unsigned long l) {
@@ -20,7 +20,7 @@ pearson(const double *d, const unsigned long n, const unsigned long l) {
 	nn = n * (n - 1) / 2;
 	dim = malloc(sizeof(npy_intp));
 	dim[0] = n * (n - 1) / 2;
-	coef = (PyArrayObject *) PyArray_ZEROS(1, dim, PyArray_DOUBLE, 0);
+	coef = (PyArrayObject *) PyArray_ZEROS(1, dim, NPY_DOUBLE, 0);
 	free(dim);
 	if(!coef) {
 		PyErr_SetString(PyExc_MemoryError, "Cannot create output array.");
@@ -84,7 +84,7 @@ CorrCoef_Pearson(PyObject *self, PyObject* args) {
 	if(!PyArg_ParseTuple(args, "O|I", &arg, &nthreads))
 		return NULL;
 	data = (PyArrayObject *) PyArray_ContiguousFromObject(arg,
-		PyArray_DOUBLE, 2, 2);
+		NPY_DOUBLE, 2, 2);
 	if(!data)
 		return NULL;
 	if(nthreads)
